@@ -1,0 +1,498 @@
+body{
+    background-color: #e9ecee;
+}
+.title{
+    background: url(../img/titulo.png) no-repeat;
+    width: 550px;
+    height: 100px;
+    margin-left: 100px;
+    z-index: 9999px;
+}
+.borderIDer{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    left: 904px;
+    top: 580px;
+    position: absolute;
+}
+.borderIIzq{
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    position: absolute;
+    left: 2px;
+    top: 580px;
+}
+.borderSDer{
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    left: 904px;
+    position: absolute;
+    top: 0px;
+}
+.cajaCentral{
+    width: 926px;
+}
+.cajaCentral .corner{
+    background: url(../img/corner.png) no-repeat;
+    width: 21px;
+    height: 21px;
+}
+.cajaCentral .margenS{
+    height: 21px;
+    background: url(../img/border.png) repeat-x;
+    width: 881px;
+    margin-left: 23px;
+    margin-top: -2px;
+}
+.cajaCentral .margenI{
+    width: 100%;
+    height: 21px;
+    background: url(../img/abajo.png) repeat-x;
+    float: left;
+    width: 881px;
+    margin-left: 23px;
+}
+.borderSIzq{
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    left: 2px;
+    top: 0px;
+}
+.container{
+    min-height: 700px;
+    overflow: hidden;
+    position:absolute;
+    width: 930px;
+}
+.contenido{
+    clear:both;
+    height: 560px !important;
+    margin-top: 2px;
+    position:relative;
+}
+.bordeIzquierda{
+    height:559px;
+    width: 21px;
+    background: url(../img/borde-izq.png) repeat-y;
+    float:left;
+    margin-top: 0px
+}
+.bordeDerecha{
+    height: 559px;
+    width: 21px;
+    background: url(../img/borde-der.png) repeat-y;
+    float:right;
+    margin-top: 0px;
+}
+.cajaModelos{
+    background: url(../img/btn_modelos.png) no-repeat;
+    width: 100%;
+    height: 100%;
+}
+.cajaEventos{
+    background: url(../img/btn_eventos.png) no-repeat;
+    width: 100%;
+    height: 100%;
+}
+.cajaComerciales{
+    background: url(../img/btn_comerciales.png) no-repeat;
+    width: 100%;
+    height: 100%;
+}
+.cajaPV{
+    background: url(../img/btn_postventa.png) no-repeat;
+    width: 100%;
+    height: 100%;
+}
+.caja{
+    width: 220px;
+    height: 235px;
+    float: left;
+}
+.caja label{
+    margin-top: 195px;
+    float: left;
+    color: #fff;
+    font-size: 18px;
+    font-family: Arial;
+    margin-right: 38px;
+    float: right;
+    height: 40px;
+}
+.cajaComerciales label{
+    margin-right: 31px;
+}
+.cajaPV label{
+    margin-right: 33px;
+}
+.cajaType{
+    cursor:pointer;
+}
+.cajaType:hover{
+    margin-top: -40px;
+    margin-bottom: 3px;
+    height: 272px;
+
+}
+.clear{
+    clear:both;
+    
+    position: absolute;
+}
+.sombra{
+    background: url(../img/sombra.png) no-repeat;
+    background-size: 100% auto;
+    width: 100%;
+    height: 10px;
+}
+.titulo_home{
+    width: 440px;
+    height: 70px;
+    background: url(../img/titulo_home.png) no-repeat;
+    margin-left: 230px;
+    margin-top: 270px;
+    
+}
+.elemento{
+    min-height: 700px;
+    width: 906px;
+    overflow: hidden;
+    position: absolute;
+}
+#MODELOS{
+    top:1050px;
+}
+#COMERCIALES{
+    top:1950px;
+}
+#POSTVENTA{
+    top: 2630px;
+}
+#EVENTO{
+    top: 3400px;
+}
+.volante{
+    background: url(../img/volante.png) no-repeat;
+width: 785px;
+height: 520px;
+background-size: 100%;
+margin-left: 5px;
+margin-top: 0px;
+}
+#CARROUSELCOMERCIALES{
+    margin-top:70px;
+    margin-left: 12px;
+}
+#CARROUSELEVENTO{
+    margin-top:70px;
+    margin-left: 12px;
+}
+#CARROUSELPOSTVENTA{
+    margin-top:70px;
+    margin-left: 12px;
+}
+.volanteBack{
+    background: url(../img/volante_tablero.png) no-repeat;
+width: 833px;
+height: 258px;
+margin-top: -142px;
+margin-left: 50px;
+position: absolute;
+overflow: hidden;
+
+}
+.autos, .comerciales, .postventas, .Eventos{
+    top: 590px;
+    position: absolute;
+    width: 830px;
+    height: 86px;
+    left: 110px;
+}
+.caroufredsel_wrapper{
+    width:640px !important;
+   
+}
+.autos ul, .comerciales ul, .postventas ul, .Eventos ul{
+    width:600px !important;
+    overflow: hidden;
+    height: 50px !important;
+}
+.caroufredsel_wrapper{
+    width: 640px !important;
+    height: 60px !important; 
+}
+.autos ul li, .comerciales ul li, .postventas ul li, .Eventos ul li{
+    display:inline;
+    margin-left: 10px;
+}
+.hidden{
+    display: none;
+}
+#carousel-right,.nextcarr1{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+}
+.tracker-individual-container{
+    display:none !important;
+}
+.tracker-summation-container{
+    display:none !important;
+}
+.modelosRotator .auto{
+    display: inline-block;
+    padding: 0px 180px;
+    width: 950px;
+}
+.comercialesRotator .auto, .postventasRotator .auto, .EventosRotator .auto{
+    display: inline;
+    padding: 0px 240px;
+    margin-left: 150px;
+}
+
+.modelosRotator, .comercialesRotator, .EventosRotator, .postventasRotator{
+    white-space: nowrap;
+    top:0px;
+    margin-top: -50px;
+}
+.comercialesRotator, .postventasRotator, .EventosRotator{
+    margin-top: 0px;
+}
+.modeloAlaVista, .comercialAlaVista, .EventoAlaVista, .postventaAlaVista{
+    width: 900px;
+    height: 450px;
+    top:0px;
+    left:0px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+#MODELOUNICO{
+    left: 950px;
+    position: absolute;
+    top: 0px;
+    overflow: visible;
+}
+#COMERCIALUNICO{
+    left: 950px;
+    position: absolute;
+    top: 0px;
+    overflow: visible;
+}
+#POSTVENTAUNICO{
+    left: 950px;
+    position: absolute;
+    top: 0px;
+    overflow: visible;
+}
+#EVENTOUNICO{
+    left: 950px;
+    position: absolute;
+    top: 0px;
+    overflow: visible;
+}
+.thumb_prev{
+    background: url(../img/flecha_thumbs.png) no-repeat;
+    height: 30px;
+    width: 50px;
+    position: absolute;
+    top: 25px;
+    left: -10px;
+}
+.thumb_next{
+    background: url(../img/flecha_thumbs.png) no-repeat;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    height: 30px;
+    width: 50px;
+    top: 18px;
+    left: 640px;
+    position: absolute;
+}
+#HOME{
+    position: absolute;
+    top: 80px;
+    width:885px;
+    left: 12px;
+}
+.ElementosVisible{
+    width: 906px;
+    height: 700px;
+    overflow: hidden;
+    position:absolute;
+    left: 11px;
+    top: -11px;
+}
+.volantecostado{
+    background: url(../img/trama_tablero_abajo.png) no-repeat;
+    width: 926px;
+    height: 116px;
+    background-size: 100%;
+    margin-left: -10px;
+}
+#CARROUSELMODELOS{
+    margin-left: 12px;
+}
+.cabinaSuperior{
+    background: url(../img/trama_tablero_arriba.png) no-repeat;
+    width: 918px;
+    height: 69px;
+    background-size: 100%;
+    margin-top: -6px;
+    margin-left: -6px;
+}
+.volanteBottom{
+    margin-top: -51px;
+}
+.videoPlayer{
+    background: url(../img/marco_video.png);
+    background-size: 100%;
+    width: 200px;
+    height: 157px;
+    display: inline;
+    margin-left: 40px;
+    position: absolute;
+    margin-top: 110px;
+    margin-left: 0px !important;
+}
+.marcoVideo1{
+    background: url(../img/marco_video.png) no-repeat;
+    background-size: 100%;
+    width: 218px !important;
+    height: 230px !important;
+    display: inline;
+    margin-top: -5px !important;
+    margin-left: -210px !important;
+    cursor:pointer; 
+}
+.marcoVideo2{
+    background: url(../img/marco_video.png) no-repeat;
+    background-size: 100%;
+    width: 141px !important;
+    height: 230px !important;
+    display: inline;
+    margin-top: -4px !important;
+    margin-left: -138px !important;
+    cursor:pointer;
+}
+.innermodelData{
+    width: 200px;
+    height: 157px;
+    display: inline;
+    position: absolute;
+    margin-top: 110px;
+    margin-left: -230px;
+}
+.videoPlayer2{
+    background: url(../img/marco_video.png);
+    background-size: 100%;
+    width:100px;
+    height: 78px;
+    display:inline;
+    margin-top: 310px;
+    margin-left: 210px;
+    position: absolute;
+    z-index: 9999;
+}
+.contenidoAuto{
+    display:inline;
+}
+.flechita{
+    width: 100%;
+    height: 100%;
+}
+.flechita:hover{
+    background: url(../img/flechitaG.png) 100px -2px no-repeat;   
+}
+.volver{
+    background: url(../img/btn_categorias.png) no-repeat;
+        position: absolute;
+        top: 370px;
+        left: 2px;
+        width: 210px;
+        height: 60px;
+}
+.center{
+    margin: auto;
+    width: 1000px;
+}
+.carousel2UnSelected{
+    width:140px;
+}
+.titles{
+    top:-60px;
+    margin-left: 0px;
+}
+.title2{
+    font-size:30px;
+}
+.videoGrande{
+    display: none;
+    width:500px;
+    height: 290px;
+    position: absolute;
+    margin-top: 40px;
+    margin-left: -150px;
+    z-index: 9999;
+}
+.imagenAutoUnico{
+    
+}
+.tituloVideo2{
+    top: -70px;
+    left: 80px;
+}
+.sombra1{
+    background: url(../img/sombra.png) no-repeat;
+    background-size: 100% auto;
+width: 200px;
+height: 10px;
+    margin-left: 0px !important;
+    margin-top: 280px !important;
+}
+.sombra2{
+    background: url(../img/sombra.png) no-repeat;
+background-size: 100% auto;
+width: 135px;
+height: 10px;
+margin-left: 210px !important;
+margin-top: 420px !important;
+}
+.video2Boton{
+    background: url(../img/base_btn_video.png) no-repeat;
+    width:300px;
+    height: 50px;
+    position: absolute;
+    padding-top: 12px;
+    padding-left: 19px;
+    cursor:pointer;
+    z-index: 9999;
+    display: none;
+    margin-top: 370px;
+    margin-left: 120px;
+}
+.sombra1Bis{
+    margin-left: 0px !important;
+    margin-top: 345px !important;
+    left: 530px;
+    width: 400px;
+}
+.sombra2Bis{
+    width: 130px;
+    height: 10px;
+    margin-left: 130px !important;
+    margin-top: 420px !important;
+}
+.imagenAutoUnicoBis{
+    padding-right:150px;
+    margin-top: 70px;
+    width: 330px;
+}
+.playerToBig{
+    cursor:pointer;
+}

@@ -1,0 +1,685 @@
+							<script type="text/javascript"> 
+                            $(document).ready(function(){
+								
+								//Setear Variables	
+								animacionV = false;
+								//elegidoTemp = varAuto;
+								cantModulos = 0;
+								
+								if(videosV==true){
+									if(varAuto=='modelo_video_1'){
+										$('#player1').attr('src', 'http://www.youtube.com/embed/'+videosIDPTemp+'?showinfo=1&modestbranding=1&wmode=opaque&enablejsapi=1&autohide=1&rel=0&version=3&theme=light&autoplay=1');
+									}
+									
+									$('#modelo_video_1 .autoUnicoTxt h2').html(videosTitulo);
+									$('#modelo_video_1 .autoUnicoTxt p').html(videosFrase);	
+																				
+									$('.imagenModeloVideo').each(function () {	
+										$(this).attr('src','images/modelos/'+videosIMG+'.jpg');
+									});
+																		
+									$('#modelo_video_1 .linkMasVideosB').attr('data-video-nover', '2');
+									$('#modelo_video_1 .linkMasVideosA').attr('data-video-nover', '1');
+									
+									$('#modelo_video_1 .linkMasVideosA').attr('data-video-1', videosIDP1);	
+									$('#modelo_video_1 .linkMasVideosB').attr('data-video-1', videosIDP2);
+								
+									if(varVideo=='1'){
+										$('#modelo_video_1 .linkMasVideosA').css({'display':'none'});
+										$('#modelo_video_1 .linkMasVideosB').css({'display':'block'});
+									}else if(varVideo=='2'){
+										$('#modelo_video_1 .linkMasVideosB').css({'display':'none'});
+										$('#modelo_video_1 .linkMasVideosA').css({'display':'block'});
+									}
+									
+									if($('#modelo_video_1 .linkMasVideosB').attr('data-video-1')==''){
+										$('#modelo_video_1 .linkMasVideosB').css({'display':'none'});
+									}
+									if($('#modelo_video_1 .linkMasVideosA').attr('data-video-1')==''){
+										$('#modelo_video_1 .linkMasVideosA').css({'display':'none'});
+									}
+								}
+								
+								//Centrar volante
+								anchoMod = ($('#modAuto').width()*$('.pageContent').width())/100;
+								
+								$('.modAutoVolante').css({
+									 left: (anchoMod-$('.modAutoVolante').width())/2
+								});
+								
+								//Acciones mas videos								
+								$('.linkMasVideos').each(function () {	
+									$(this).click(function() {
+									if(varAuto=='modelo_video_1'){
+											$('#player1').attr('src', 'http://www.youtube.com/embed/'+$(this).attr('data-video-1')+'?showinfo=1&modestbranding=1&wmode=opaque&enablejsapi=1&autohide=1&rel=0&version=3&theme=light&autoplay=1');
+
+											videosIDPTemp = $(this).attr('data-video-1');
+											
+											varVideo = $(this).attr('data-video-nover');
+
+											$('.imagenModeloVideo').each(function () {													
+												$(this).attr('src','images/modelos/'+videosIMG+'.jpg');
+											});											
+											
+											$('#modelo_video_1 .linkMasVideosB').css({'display':'block'});
+											$('#modelo_video_1 .linkMasVideosA').css({'display':'block'});		
+											
+											if($(this).attr('data-video-nover')=='1'){
+												$('#modelo_video_1 .linkMasVideosA').css({'display':'none'});
+												$('#modelo_video_1 .linkMasVideosB').css({'display':'block'});
+											}else if($(this).attr('data-video-nover')=='2'){
+												$('#modelo_video_1 .linkMasVideosB').css({'display':'none'});
+												$('#modelo_video_1 .linkMasVideosA').css({'display':'block'});
+											}
+											if($('#modelo_video_1 .linkMasVideosB').attr('data-video-1')==''){
+												$('#modelo_video_1 .linkMasVideosB').css({'display':'none'});
+											}
+											if($('#modelo_video_1 .linkMasVideosA').attr('data-video-1')==''){
+												$('#modelo_video_1 .linkMasVideosA').css({'display':'none'});
+											}									
+										
+									}
+									});
+	
+								});
+								
+								//Acciones de ver video
+								$('.linkVerVideo').each(function () {										
+										$(this).click(function() {										
+											
+											$('#player1').attr('src', 'http://www.youtube.com/embed/'+$(this).attr('data-video-1')+'?showinfo=1&modestbranding=1&wmode=opaque&enablejsapi=1&autohide=1&rel=0&version=3&theme=light&autoplay=1');
+											
+											videosIDP1 = $(this).attr('data-video-1');
+											videosIDP2 = $(this).attr('data-video-2');	
+											
+											videosIDPTemp = $(this).attr('data-video-1');											
+											videosIMG = $(this).attr('data-video-modelo');	
+											videosTitulo = $(this).attr('data-video-modelo-tit');	
+											videosFrase = $(this).attr('data-video-modelo-frase');											
+											varVideo = $(this).attr('data-video-nover');
+											
+											$('.imagenModeloVideo').each(function () {													
+												$(this).attr('src','images/modelos/'+videosIMG+'.jpg');
+											});																				
+											
+											$('#modelo_video_1 .autoUnicoTxt h2').html(videosTitulo);
+											$('#modelo_video_1 .autoUnicoTxt p').html(videosFrase);	
+											
+											
+											$('#modelo_video_1 .linkMasVideosA').css({'display':'block'});	
+											$('#modelo_video_1 .linkMasVideosB').css({'display':'block'});
+
+											$('#modelo_video_1 .linkMasVideosA').attr('data-video-nover', '1');	
+											$('#modelo_video_1 .linkMasVideosB').attr('data-video-nover', '2');
+																			
+											$('#modelo_video_1 .linkMasVideosA').attr('data-video-1', $(this).attr('data-video-1'));
+											$('#modelo_video_1 .linkMasVideosB').attr('data-video-1', $(this).attr('data-video-2'));
+	
+												
+											if($(this).attr('data-video-nover')=='1'){	
+												$('#modelo_video_1 .linkMasVideosA').css({'display':'none'});
+												$('#modelo_video_1 .linkMasVideosB').css({'display':'block'});
+											}else if($(this).attr('data-video-nover')=='2'){
+												$('#modelo_video_1 .linkMasVideosB').css({'display':'none'});
+												$('#modelo_video_1 .linkMasVideosA').css({'display':'block'});
+											}
+											if($('#modelo_video_1 .linkMasVideosB').attr('data-video-1')==''){
+												$('#modelo_video_1 .linkMasVideosB').css({'display':'none'});
+											}else if($(this).attr('data-video-nover')=='2'){	
+												$('#modelo_video_1 .linkMasVideosB').css({'display':'none'});
+											}
+											if($('#modelo_video_1 .linkMasVideosA').attr('data-video-1')==''){
+												$('#modelo_video_1 .linkMasVideosA').css({'display':'none'});
+											}else if($(this).attr('data-video-nover')=='1'){	
+												$('#modelo_video_1 .linkMasVideosA').css({'display':'none'});
+											}
+
+											cambiarAuto('modelo_video_1');											
+
+										});
+								}); 
+
+								
+								//Accion cambiar modelo en lista miniatura
+								$('#modelosEALista li a').each(function (i) {									
+										$(this).click(function() {											
+											cambiarAuto($(this).attr('data-autoinfo'));
+										});
+								}); 
+								
+								//ordenar modelos	
+								$('.modAutoCont').each(function (i) {
+										cantModulos++;
+										$(this).css({
+											 left: (anchoMod*i)				   
+										});
+										$(this).attr('data-left',(anchoMod*i));
+										$(this).attr('data-leftid',i);
+								}); 
+								
+								//Inciar navegacion a modelo
+								lanzarModelo();
+
+    
+                            });   
+
+                            </script>  
+
+
+                        <div class="contSec" id="modAuto">
+
+
+                            <div class="modAutoCont" id="modelo_auto_1">
+                            	<div class="modAutoContSub">
+                                    <img class="autoUnicoImagen"  src="images/modelos/1.jpg"/>
+                                    <div class="autoUnicoTxt">
+                                    	<h2>DOBLO</h2>
+                                    </div>
+                                    <div class="autoUnicoVideo">
+                                    	<div class="linkVideo linkVideoA">
+                                        	<p class="txtLinkVideo">ESPACIO EXTRA PARA TU FAMILIA</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="D7uiicel9PU" data-video-2="" data-video-modelo-tit="DOBLO" data-video-modelo-frase="ESPACIO EXTRA PARA TU FAMILIA" data-video-nover="1" data-video-modelo="1"  src="http://img.youtube.com/vi/D7uiicel9PU/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                        
+                                    	<!--
+                                        <div class="linkVideo linkVideoB">
+                                        	<p class="txtLinkVideo">CONOCÉ TU FIAT</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="D7uiicel9PU" data-video-modelo-tit="DOBLO" data-video-modelo-frase="ESPACIO EXTRA PARA TU FAMILIA" data-video-nover="1" data-video-modelo="1"  src="http://img.youtube.com/vi/D7uiicel9PU/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                        -->
+                                    	
+                                    </div>
+                                </div> 
+                            </div>
+                            
+                            
+                            <div class="modAutoCont" id="modelo_auto_2">
+                            	<div class="modAutoContSub">
+                                    <img class="autoUnicoImagen"  src="images/modelos/2.jpg"/>
+                                    <div class="autoUnicoTxt">
+                                    	<h2>DOBLO CARGO</h2>
+                                    </div>
+                                    <div class="autoUnicoVideo">
+                                    	<!--
+                                        <div class="linkVideo linkVideoA">
+                                        	<p class="txtLinkVideo">EFICIENCIA Y PRODUCTIVIDAD PARA TU NEGOCIO</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="xdFa1RS6P34"  data-video-modelo-tit="DOBLO" data-video-modelo-frase="ESPACIO EXTRA PARA TU FAMILIA" data-video-modelo="2"  src="http://img.youtube.com/vi/xdFa1RS6P34/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                        
+                                    	<div class="linkVideo linkVideoB">
+                                        	<p class="txtLinkVideo">CONOCÉ TU FIAT</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="xdFa1RS6P34"  data-video-modelo-tit="DOBLO" data-video-modelo-frase="ESPACIO EXTRA PARA TU FAMILIA" data-video-modelo="2"  src="http://img.youtube.com/vi/xdFa1RS6P34/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                        -->
+                                    	
+                                    </div>
+                                </div> 
+                            </div>
+                            
+                            <div class="modAutoCont" id="modelo_auto_3">
+                            	<div class="modAutoContSub">
+                                    <img class="autoUnicoImagen"  src="images/modelos/3.jpg"/>
+                                    <div class="autoUnicoTxt">
+                                    	<h2>DUCATO</h2>
+                                    </div>
+                                    <div class="autoUnicoVideo">
+                                    <!--
+                                    	<div class="linkVideo linkVideoA">
+                                        	<p class="txtLinkVideo">TRABAJA PARA VOS</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="xdFa1RS6P34"  data-video-modelo-tit="DOBLO" data-video-modelo-frase="ESPACIO EXTRA PARA TU FAMILIA" data-video-modelo="3"  src="http://img.youtube.com/vi/xdFa1RS6P34/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                        
+                                    	<div class="linkVideo linkVideoB">
+                                        	<p class="txtLinkVideo">CONOCÉ TU FIAT</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="xdFa1RS6P34"  data-video-modelo-tit="DOBLO" data-video-modelo-frase="ESPACIO EXTRA PARA TU FAMILIA" data-video-modelo="3"  src="http://img.youtube.com/vi/xdFa1RS6P34/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                        -->
+                                    	
+                                    </div>
+                                </div> 
+                            </div>
+                            
+                            <div class="modAutoCont" id="modelo_auto_4">
+                            	<div class="modAutoContSub">
+                                    <img class="autoUnicoImagen"  src="images/modelos/4.jpg"/>
+                                    <div class="autoUnicoTxt">
+                                    	<h2>500</h2>
+                                    </div>
+                                    <div class="autoUnicoVideo">
+                                    	<div class="linkVideo linkVideoA">
+                                        	<p class="txtLinkVideo">VOS, ANTES QUE NADA</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="-iv1AeP6ueY" data-video-2="_hz6LYz1XbY"  data-video-modelo-tit="500" data-video-modelo-frase="VOS, ANTES QUE NADA" data-video-modelo="4" data-video-nover="1"  src="http://img.youtube.com/vi/-iv1AeP6ueY/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                        
+                                    	<div class="linkVideo linkVideoB">
+                                        	<p class="txtLinkVideo">CONOCÉ TU FIAT</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="_hz6LYz1XbY" data-video-2="-iv1AeP6ueY"  data-video-modelo-tit="500" data-video-modelo-frase="VOS, ANTES QUE NADA" data-video-modelo="4" data-video-nover="2"  src="http://img.youtube.com/vi/_hz6LYz1XbY/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                    	
+                                    </div>
+                                </div> 
+                            </div>
+                            
+                            <div class="modAutoCont" id="modelo_auto_5">
+                            	<div class="modAutoContSub">
+                                    <img class="autoUnicoImagen"  src="images/modelos/5.jpg"/>
+                                    <div class="autoUnicoTxt">
+                                    	<h2>BRAVO</h2>
+                                    </div>
+                                    <div class="autoUnicoVideo">
+                                    	<div class="linkVideo linkVideoA">
+                                        	<p class="txtLinkVideo">POR TU  FORMA DE VIVIR &quot;BRAVO&quot;</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="m9iSJ8Dm3ac" data-video-2=""  data-video-modelo-tit="BRAVO" data-video-modelo-frase="POR TU  FORMA DE VIVIR &quot;BRAVO&quot;" data-video-modelo="5" data-video-nover="1" src="http://img.youtube.com/vi/m9iSJ8Dm3ac/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                        <!--
+                                    	<div class="linkVideo linkVideoB">
+                                        	<p class="txtLinkVideo">CONOCÉ TU FIAT</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="xdFa1RS6P34"  data-video-modelo-tit="BRAVO" data-video-modelo-frase="POR TU  FORMA DE VIVIR &quot;BRAVO&quot;" data-video-modelo="5" data-video-nover="2" src="http://img.youtube.com/vi/xdFa1RS6P34/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                        -->
+                                    	
+                                    </div>
+                                </div> 
+                            </div>
+                            
+                            
+                            <div class="modAutoCont" id="modelo_auto_6">
+                            	<div class="modAutoContSub">
+                                    <img class="autoUnicoImagen"  src="images/modelos/6.jpg"/>
+                                    <div class="autoUnicoTxt">
+                                    	<h2>FIORINO</h2>
+                                    </div>
+                                    <!--
+                                    <div class="autoUnicoVideo">
+                                    	<div class="linkVideo linkVideoA">
+                                        	<p class="txtLinkVideo">UNA AUTENTICA SOLUCION PARA TU TRABAJO</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="xdFa1RS6P34"  data-video-modelo-tit="FIORINO" data-video-modelo-frase="UNA AUTENTICA SOLUCION PARA TU TRABAJO" data-video-modelo="6" data-video-nover="1" src="http://img.youtube.com/vi/xdFa1RS6P34/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                        
+                                    	<div class="linkVideo linkVideoB">
+                                        	<p class="txtLinkVideo">CONOCÉ TU FIAT</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="xdFa1RS6P34"  data-video-modelo-tit="FIORINO" data-video-modelo-frase="UNA AUTENTICA SOLUCION PARA TU TRABAJO" data-video-modelo="6" data-video-nover="2" src="http://img.youtube.com/vi/xdFa1RS6P34/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                    	
+                                    </div>
+                                    -->
+                                </div> 
+                            </div>
+                            
+                            
+                            
+                            <div class="modAutoCont" id="modelo_auto_7">
+                            	<div class="modAutoContSub">
+                                    <img class="autoUnicoImagen"  src="images/modelos/7.jpg"/>
+                                    <div class="autoUnicoTxt">
+                                    	<h2>NUEVO QUBO</h2>
+                                    </div>
+                                    <!--
+                                    <div class="autoUnicoVideo">
+                                    	<div class="linkVideo linkVideoA">
+                                        	<p class="txtLinkVideo">UN ALIADO PARA TU TRABAJO</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="xdFa1RS6P34"  data-video-modelo-tit="NUEVO QUBO" data-video-modelo-frase="UN ALIADO PARA TU TRABAJO" data-video-modelo="7" data-video-nover="1" src="http://img.youtube.com/vi/xdFa1RS6P34/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                        
+                                    	<div class="linkVideo linkVideoB">
+                                        	<p class="txtLinkVideo">CONOCÉ TU FIAT</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="xdFa1RS6P34"  data-video-modelo-tit="NUEVO QUBO" data-video-modelo-frase="UN ALIADO PARA TU TRABAJO" data-video-modelo="7" data-video-nover="2" src="http://img.youtube.com/vi/xdFa1RS6P34/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                    	
+                                    </div>
+                                    -->
+                                </div> 
+                            </div>
+                            
+                            
+                            <div class="modAutoCont" id="modelo_auto_8">
+                            	<div class="modAutoContSub">
+                                    <img class="autoUnicoImagen"  src="images/modelos/8.jpg"/>
+                                    <div class="autoUnicoTxt">
+                                    	<h2>STRADA ADVENTURE</h2>
+                                    </div>
+                                    <!--
+                                    <div class="autoUnicoVideo">
+                                    	<div class="linkVideo linkVideoA">
+                                        	<p class="txtLinkVideo">UNA OPCIÓN PARA CADA NECESIDAD</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="xdFa1RS6P34"  data-video-modelo-tit="STRADA ADVENTURE" data-video-modelo-frase="UNA OPCIÓN PARA CADA NECESIDAD" data-video-modelo="8" data-video-nover="1" src="http://img.youtube.com/vi/xdFa1RS6P34/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                        
+                                    	<div class="linkVideo linkVideoB">
+                                        	<p class="txtLinkVideo">CONOCÉ TU FIAT</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="xdFa1RS6P34"  data-video-modelo-tit="STRADA ADVENTURE" data-video-modelo-frase="UNA OPCIÓN PARA CADA NECESIDAD" data-video-modelo="8" data-video-nover="2" src="http://img.youtube.com/vi/xdFa1RS6P34/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                    	
+                                    </div>
+                                    -->
+                                </div> 
+                            </div>
+                            
+                            
+                            
+                            <div class="modAutoCont" id="modelo_auto_9">
+                            	<div class="modAutoContSub">
+                                    <img class="autoUnicoImagen"  src="images/modelos/9.jpg"/>
+                                    <div class="autoUnicoTxt">
+                                    	<h2>GRAND SIENA</h2>
+                                    </div>
+                                    <div class="autoUnicoVideo">
+                                    	<div class="linkVideo linkVideoA">
+                                        	<p class="txtLinkVideo">HAY LUGAR PARA TODOS</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="Im6UqU-rnEE" data-video-2=""  data-video-modelo-tit="GRAND SIENA" data-video-modelo-frase="HAY LUGAR PARA TODOS" data-video-modelo="9" data-video-nover="1" src="http://img.youtube.com/vi/Im6UqU-rnEE/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                        <!--
+                                    	<div class="linkVideo linkVideoB">
+                                        	<p class="txtLinkVideo">CONOCÉ TU FIAT</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="xdFa1RS6P34"  data-video-modelo-tit="GRAND SIENA" data-video-modelo-frase="HAY LUGAR PARA TODOS" data-video-modelo="9" data-video-nover="2" src="http://img.youtube.com/vi/xdFa1RS6P34/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                        -->
+                                    	
+                                    </div>
+                                </div> 
+                            </div>
+                            
+                            
+                            
+                            <div class="modAutoCont" id="modelo_auto_10">
+                            	<div class="modAutoContSub">
+                                    <img class="autoUnicoImagen"  src="images/modelos/10.jpg"/>
+                                    <div class="autoUnicoTxt">
+                                    	<h2>IDEA ADVENTURE</h2>
+                                    </div>
+                                   
+                                    <div class="autoUnicoVideo">
+                                    	<div class="linkVideo linkVideoA">
+                                        	<p class="txtLinkVideo">PERSONALIDAD SIN LIMITES</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="EN1mHN1K9A8" data-video-2="qNljEx4qD8c"  data-video-modelo-tit="IDEA ADVENTURE" data-video-modelo-frase="PERSONALIDAD SIN LIMITES" data-video-modelo="10" data-video-nover="1" src="http://img.youtube.com/vi/EN1mHN1K9A8/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                        
+                                    	<div class="linkVideo linkVideoB">
+                                        	<p class="txtLinkVideo">CONOCÉ TU FIAT</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="qNljEx4qD8c" data-video-2="EN1mHN1K9A8" data-video-modelo-tit="IDEA ADVENTURE" data-video-modelo-frase="PERSONALIDAD SIN LIMITES"  data-video-modelo="10" data-video-nover="2" src="http://img.youtube.com/vi/qNljEx4qD8c/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                    	
+                                    </div>
+
+                                </div> 
+                            </div>
+                            
+                            
+                            
+                            
+                            <div class="modAutoCont" id="modelo_auto_11">
+                            	<div class="modAutoContSub">
+                                    <img class="autoUnicoImagen"  src="images/modelos/11.jpg"/>
+                                    <div class="autoUnicoTxt">
+                                    	<h2>LINEA</h2>
+                                    </div>
+                                    <!--
+                                    <div class="autoUnicoVideo">
+                                    	<div class="linkVideo linkVideoA">
+                                        	<p class="txtLinkVideo">ELEGANCIA EN MOVIMIENTO</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="xdFa1RS6P34"  data-video-modelo-tit="LINEA" data-video-modelo-frase="ELEGANCIA EN MOVIMIENTO" data-video-modelo="11" data-video-nover="1" src="http://img.youtube.com/vi/xdFa1RS6P34/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                        
+                                    	<div class="linkVideo linkVideoB">
+                                        	<p class="txtLinkVideo">CONOCÉ TU FIAT</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="xdFa1RS6P34"  data-video-modelo-tit="LINEA" data-video-modelo-frase="ELEGANCIA EN MOVIMIENTO" data-video-modelo="11" data-video-nover="2" src="http://img.youtube.com/vi/xdFa1RS6P34/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                    	
+                                    </div>
+                                    -->
+                                </div> 
+                            </div>
+
+                            <div class="modAutoCont" id="modelo_auto_12">
+                            	<div class="modAutoContSub">
+                                    <img class="autoUnicoImagen"  src="images/modelos/12.jpg"/>
+                                    <div class="autoUnicoTxt">
+                                    	<h2>PALIO</h2>
+                                    </div>
+                                    <div class="autoUnicoVideo">
+                                    	
+                                    	<div class="linkVideo linkVideoA">
+                                        	<p class="txtLinkVideo">ASPECTO DEPORTIVO</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="cqiqg_QIT2g" data-video-2="rLUKMgFQetI"  data-video-modelo-tit="PALIO" data-video-modelo-frase="ASPECTO DEPORTIVO" data-video-modelo="12" data-video-nover="1" src="http://img.youtube.com/vi/cqiqg_QIT2g/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                        
+                                    	<div class="linkVideo linkVideoB">
+                                        	<p class="txtLinkVideo">CONOCÉ TU FIAT</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="rLUKMgFQetI" data-video-2="cqiqg_QIT2g"  data-video-modelo-tit="PALIO" data-video-modelo-frase="ASPECTO DEPORTIVO" data-video-modelo="12" data-video-nover="2" src="http://img.youtube.com/vi/rLUKMgFQetI/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                    	
+                                    </div>
+                                </div> 
+                            </div>
+
+                            <div class="modAutoCont" id="modelo_auto_13">
+                            	<div class="modAutoContSub">
+                                    <img class="autoUnicoImagen"  src="images/modelos/13.jpg"/>
+                                    <div class="autoUnicoTxt">
+                                    	<h2>PALIO WEEKEND</h2>
+                                    </div>
+                                    <!--
+                                    <div class="autoUnicoVideo">
+                                    	<div class="linkVideo linkVideoA">
+                                        	<p class="txtLinkVideo">EL AUTO IDEAL PARA VIAJAR EN COMPAÑIA</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="xdFa1RS6P34"  data-video-modelo-tit="PALIO WEEKEND" data-video-modelo-frase="EL AUTO IDEAL PARA VIAJAR EN COMPAÑIA" data-video-modelo="13" data-video-nover="1" src="http://img.youtube.com/vi/xdFa1RS6P34/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                      </div>
+                                        
+                                    	<div class="linkVideo linkVideoB">
+                                        	<p class="txtLinkVideo">CONOCÉ TU FIAT</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="xdFa1RS6P34"  data-video-modelo-tit="PALIO WEEKEND" data-video-modelo-frase="EL AUTO IDEAL PARA VIAJAR EN COMPAÑIA" data-video-modelo="13" data-video-nover="2" src="http://img.youtube.com/vi/xdFa1RS6P34/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                    	
+                                    </div>
+                                    -->
+                                </div> 
+                            </div>
+
+                            <div class="modAutoCont" id="modelo_auto_14">
+                            	<div class="modAutoContSub">
+                                    <img class="autoUnicoImagen"  src="images/modelos/14.jpg"/>
+                                    <div class="autoUnicoTxt">
+                                    	<h2>QUBO</h2>
+                                    </div>
+                                    <div class="autoUnicoVideo">
+                                    	<div class="linkVideo linkVideoA">
+                                        	<p class="txtLinkVideo">ES LO QUE QUIERAS QUE SEA</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="DjNYu4pz-0c" data-video-2="xdFa1RS6P34"  data-video-modelo-tit="QUBO" data-video-modelo-frase="ES LO QUE QUIERAS QUE SEA" data-video-modelo="14" data-video-nover="1" src="http://img.youtube.com/vi/DjNYu4pz-0c/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                      </div>
+                                        
+                                    	<div class="linkVideo linkVideoB">
+                                        	<p class="txtLinkVideo">CONOCÉ TU FIAT</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="DjNYu4pz-0c"  data-video-modelo-tit="QUBO" data-video-modelo-frase="ES LO QUE QUIERAS QUE SEA" data-video-modelo="14" data-video-nover="2" src="http://img.youtube.com/vi/xdFa1RS6P34/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                    	
+                                    </div>
+                                </div> 
+                            </div>
+
+                            <div class="modAutoCont" id="modelo_auto_15">
+                            	<div class="modAutoContSub">
+                                    <img class="autoUnicoImagen"  src="images/modelos/15.jpg"/>
+                                    <div class="autoUnicoTxt">
+                                    	<h2>UNO CARGO</h2>
+                                    </div>
+                                    <!--
+                                    <div class="autoUnicoVideo">
+                                    	<div class="linkVideo linkVideoA">
+                                        	<p class="txtLinkVideo">UN UTILITARIO FUNCIONAL</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="xdFa1RS6P34"  data-video-modelo-tit="UNO CARGO" data-video-modelo-frase="UN UTILITARIO FUNCIONAL" data-video-modelo="15" data-video-nover="1" src="http://img.youtube.com/vi/xdFa1RS6P34/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                      </div>
+                                        
+                                    	<div class="linkVideo linkVideoB">
+                                        	<p class="txtLinkVideo">CONOCÉ TU FIAT</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="xdFa1RS6P34"  data-video-modelo-tit="UNO CARGO" data-video-modelo-frase="UN UTILITARIO FUNCIONAL" data-video-modelo="15" data-video-nover="2" src="http://img.youtube.com/vi/xdFa1RS6P34/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                    	
+                                    </div>
+                                    -->
+                                </div> 
+                            </div>
+
+                            <div class="modAutoCont" id="modelo_auto_16">
+                            	<div class="modAutoContSub">
+                                    <img class="autoUnicoImagen"  src="images/modelos/16.jpg"/>
+                                    <div class="autoUnicoTxt">
+                                    	<h2>PALIO ADVENTURE</h2>
+                                    </div>
+                                    <!--
+                                    <div class="autoUnicoVideo">
+                                    	<div class="linkVideo linkVideoA">
+                                        	<p class="txtLinkVideo">.</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="xdFa1RS6P34"  data-video-modelo-tit="PALIO ADVENTURE" data-video-modelo-frase="" data-video-modelo="16" data-video-nover="1" src="http://img.youtube.com/vi/xdFa1RS6P34/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                      </div>
+                                        
+                                    	<div class="linkVideo linkVideoB">
+                                        	<p class="txtLinkVideo">CONOCÉ TU FIAT</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="xdFa1RS6P34"  data-video-modelo-tit="PALIO ADVENTURE" data-video-modelo-frase="" data-video-modelo="16" data-video-nover="2" src="http://img.youtube.com/vi/xdFa1RS6P34/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                    	
+                                    </div>
+                                    -->
+                                </div> 
+                            </div>
+                            
+
+                            <div class="modAutoCont" id="modelo_auto_17">
+                            	<div class="modAutoContSub">
+                                    <img class="autoUnicoImagen"  src="images/modelos/17.jpg"/>
+                                    <div class="autoUnicoTxt">
+                                    	<h2>UNO</h2>
+                                    </div>
+                                    <div class="autoUnicoVideo">
+                                    	<div class="linkVideo linkVideoA">
+                                        	<p class="txtLinkVideo">UN ICONO DE LA INDUSTRIA AUTOMOVILÍSTICA</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="c2g0O9i9-iw" data-video-2=""  data-video-modelo-tit="UNO" data-video-modelo-frase="UN ICONO DE LA INDUSTRIA AUTOMOVILÍSTICA" data-video-nover="1" data-video-modelo="17"  src="http://img.youtube.com/vi/c2g0O9i9-iw/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                      </div>
+                                        <!--
+                                    	<div class="linkVideo linkVideoB">
+                                        	<p class="txtLinkVideo">CONOCÉ TU FIAT</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="c2g0O9i9-iw" data-video-2=""  data-video-modelo-tit="UNO" data-video-modelo-frase="UN ICONO DE LA INDUSTRIA AUTOMOVILÍSTICA" data-video-modelo="17" data-video-nover="2" src="http://img.youtube.com/vi/c2g0O9i9-iw/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>-->
+                                    	
+                                    </div>
+                                </div> 
+                            </div>
+                            
+                            <div class="modAutoCont" id="modelo_auto_18">
+                            	<div class="modAutoContSub">
+                                    <img class="autoUnicoImagen"  src="images/modelos/18.jpg"/>
+                                    <div class="autoUnicoTxt">
+                                    	<h2>PUNTO</h2>
+                                    </div>
+                                    <div class="autoUnicoVideo">
+                                    	<div class="linkVideo linkVideoA">
+                                        	<p class="txtLinkVideo">UN PERFIL JOVEN Y DEPORTIVO</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="Vuw_UykDtKk" data-video-2=""  data-video-modelo-tit="PUNTO" data-video-modelo-frase="UN PERFIL JOVEN Y DEPORTIVO" data-video-modelo="18" data-video-nover="1" src="http://img.youtube.com/vi/Vuw_UykDtKk/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                      </div>
+                                       <!-- 
+                                    	<div class="linkVideo linkVideoB">
+                                        	<p class="txtLinkVideo">CONOCÉ TU FIAT</p>
+                                        	<div class="contVideoYT">
+                                        		<img data-video-1="xdFa1RS6P34" data-video-2="xdFa1RS6P34"  data-video-modelo-tit="PUNTO" data-video-modelo-frase="UN PERFIL JOVEN Y DEPORTIVO" data-video-nover="2" data-video-modelo="18"  src="http://img.youtube.com/vi/xdFa1RS6P34/0.jpg" class="linkVerVideo" />
+                                            </div>
+                                        </div>
+                                        -->
+                                    	
+                                    </div>
+                                </div> 
+                            </div>
+
+
+<!-- VER VIDEOS -->
+                            <div class="modAutoCont" id="modelo_video_1">
+                            	<div class="modAutoContSub">
+                                	<div class="bloqueInfoVideo">
+                                        <div class="autoUnicoTxt">
+                                            <h2></h2>
+                                            <p class="txtLinkVideo"></p>
+                                        </div>
+                                        <img class="autoUnicoImagen imagenModeloVideo"  src="images/modelos/3.jpg" data-video-1="" data-video-2="" data-video-modelo="" />
+                                    </div>
+                                    
+                                    <img class="linkMasVideos linkMasVideosA"  src="images/mas_videos.png"/>
+                                    <img class="linkMasVideos linkMasVideosB"  src="images/mas_videos.png"/>
+									<div class="autoVideoPlayer">
+                                      <iframe width="100%" height="auto" src="" frameborder="0" allowfullscreen id="player1"></iframe>
+                                    </div>
+                                </div> 
+                            </div>
+<!-- CIERRA VER VIDEOS -->
+                        	<div class="modAutoVolante"></div>
+                        	<div class="modAutoTop"></div>
+                            <div class="modAutoTablero"></div>
+                            <div class="modAutoBottom"></div>
+                        </div>

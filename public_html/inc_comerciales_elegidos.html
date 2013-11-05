@@ -1,0 +1,154 @@
+							<script type="text/javascript"> 
+                            $(document).ready(function(){
+								
+								//Setear Variables	
+								animacionV = false;
+								cantModulos = 0;
+																
+								//Centrar volante
+								anchoMod = ($('#modAuto').width()*$('.pageContent').width())/100;
+								
+								$('.modAutoVolante').css({
+									 left: (anchoMod-$('.modAutoVolante').width())/2
+								});
+								
+								//Accion cambiar modelo en lista miniatura
+								$('#comercialesLista li a').each(function (i) {									
+										$(this).click(function() {											
+											cambiarAuto($(this).attr('data-videoinfo'));
+										});
+								}); 
+								
+								//ordenar modelos	
+								$('.modAutoCont').each(function (i) {
+										cantModulos++;
+										$(this).css({
+											 left: (anchoMod*i)				   
+										});
+										$(this).attr('data-left',(anchoMod*i));
+										$(this).attr('data-leftid',i);
+										$('#'+$(this).attr('id')+' iframe').attr('src', $('#'+$(this).attr('id')+' iframe').attr('data-link'));
+								}); 
+								if(videosV==true){									
+									linksrc =  $('#'+varAuto+' iframe').attr('data-link');
+									$('#'+varAuto+' iframe').attr('src', linksrc+'&autoplay=1');
+								}
+								
+								//Inciar navegacion a modelo
+								lanzarModelo();
+    
+                            });   
+
+                            </script>  
+
+
+                        <div class="contSec" id="modAuto">
+
+<!-- VER VIDEOS -->
+                            <div class="modAutoCont" id="video_comercial_0">
+                            	<div class="modAutoContSub">
+									<div class="comercialesVideoPlayer">
+                                      <div class="infoVideo">
+                                      	<h2>COMERCIALES</h2>
+                                        <p>FIAT 500 BY GUCCI</p>
+                                      </div>
+                                      <div class="playerVideo">
+                                          <iframe width="100%" height="auto" src="" frameborder="0" allowfullscreen data-link="http://www.youtube.com/embed/-GrtHuCMLKg?showinfo=1&modestbranding=1&wmode=opaque&enablejsapi=1&autohide=1&rel=0&version=3&theme=light" class="playerGral"></iframe>
+                                        </div>
+                                   	  </div>
+                                </div> 
+                            </div>
+                            
+                            <div class="modAutoCont" id="video_comercial_1">
+                            	<div class="modAutoContSub">
+									<div class="comercialesVideoPlayer">
+                                      <div class="infoVideo">
+                                      	<h2>COMERCIALES</h2>
+                                        <p>COMERCIAL NUMEROS FIAT 500</p>
+                                      </div>
+                                      <div class="playerVideo">
+                                          <iframe width="100%" height="auto" src="" frameborder="0" allowfullscreen data-link="http://www.youtube.com/embed/FWTPCNR-TFc?showinfo=1&modestbranding=1&wmode=opaque&enablejsapi=1&autohide=1&rel=0&version=3&theme=light" class="playerGral"></iframe>
+                                        </div>
+                                   	  </div>
+                                </div> 
+                            </div>
+                            
+                            <div class="modAutoCont" id="video_comercial_2">
+                            	<div class="modAutoContSub">
+									<div class="comercialesVideoPlayer">
+                                      <div class="infoVideo">
+                                      	<h2>COMERCIALES</h2>
+                                        <p>FIAT GRAND SIENA</p>
+                                      </div>
+                                      <div class="playerVideo">
+                                          <iframe width="100%" height="auto" src="" frameborder="0" allowfullscreen data-link="http://www.youtube.com/embed/TbEhrs4Nqzc?showinfo=1&modestbranding=1&wmode=opaque&enablejsapi=1&autohide=1&rel=0&version=3&theme=light" class="playerGral"></iframe>
+                                        </div>
+                                   	  </div>
+                                </div> 
+                            </div>
+
+                            <div class="modAutoCont" id="video_comercial_3">
+                            	<div class="modAutoContSub">
+									<div class="comercialesVideoPlayer">
+                                      <div class="infoVideo">
+                                      	<h2>COMERCIALES</h2>
+                                        <p>PRESENTE PERFECTO - OFICINA</p>
+                                      </div>
+                                      <div class="playerVideo">
+                                          <iframe width="100%" height="auto" src="" frameborder="0" allowfullscreen data-link="http://www.youtube.com/embed/8gjsp-yRuow?showinfo=1&modestbranding=1&wmode=opaque&enablejsapi=1&autohide=1&rel=0&version=3&theme=light" class="playerGral"></iframe>
+                                        </div>
+                                   	  </div>
+                                </div> 
+                            </div>
+                            
+                            <div class="modAutoCont" id="video_comercial_4">
+                            	<div class="modAutoContSub">
+									<div class="comercialesVideoPlayer">
+                                      <div class="infoVideo">
+                                      	<h2>COMERCIALES</h2>
+                                        <p>PRESENTE PERFECTO – CIRUGÍA (EXT)</p>
+                                      </div>
+                                      <div class="playerVideo">
+                                          <iframe width="100%" height="auto" src="" frameborder="0" allowfullscreen data-link="http://www.youtube.com/embed/eGsWci8Z1eg?showinfo=1&modestbranding=1&wmode=opaque&enablejsapi=1&autohide=1&rel=0&version=3&theme=light" class="playerGral"></iframe>
+                                        </div>
+                                   	  </div>
+                                </div> 
+                            </div>
+                            
+                            <div class="modAutoCont" id="video_comercial_5">
+                            	<div class="modAutoContSub">
+									<div class="comercialesVideoPlayer">
+                                      <div class="infoVideo">
+                                      	<h2>COMERCIALES</h2>
+                                        <p>PRESENTE PERFECTO - CIRUGÍA</p>
+                                      </div>
+                                      <div class="playerVideo">
+                                          <iframe width="100%" height="auto" src="" frameborder="0" allowfullscreen data-link="http://www.youtube.com/embed/feOuht332_8?showinfo=1&modestbranding=1&wmode=opaque&enablejsapi=1&autohide=1&rel=0&version=3&theme=light" class="playerGral"></iframe>
+                                        </div>
+                                   	  </div>
+                                </div> 
+                            </div>
+                            
+                            <div class="modAutoCont" id="video_comercial_6">
+                            	<div class="modAutoContSub">
+									<div class="comercialesVideoPlayer">
+                                      <div class="infoVideo">
+                                      	<h2>COMERCIALES</h2>
+                                        <p>PRESENTE PERFECTO - PANTUFLAS</p>
+                                      </div>
+                                      <div class="playerVideo">
+                                          <iframe width="100%" height="auto" src="" frameborder="0" allowfullscreen data-link="http://www.youtube.com/embed/5qW7cb6XGzs?showinfo=1&modestbranding=1&wmode=opaque&enablejsapi=1&autohide=1&rel=0&version=3&theme=light" class="playerGral"></iframe>
+                                        </div>
+                                   	  </div>
+                                </div> 
+                            </div>
+
+
+
+
+<!-- CIERRA VER VIDEOS -->
+                        	<div class="modAutoVolante"></div>
+                        	<div class="modAutoTop"></div>
+                            <div class="modAutoTablero"></div>
+                            <div class="modAutoBottom"></div>
+                        </div>
